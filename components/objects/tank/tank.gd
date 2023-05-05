@@ -6,16 +6,17 @@ var vlc = Vector2()
 @export var speed_acceleration = 5
 @export var rotation_speed = 0.025
 
+var prev_track_position = Vector2.ZERO
+
 var bullets = []
+var tracks = []
 
 func _move():
 	var up = Input.is_action_pressed("player_up")
 	var down = Input.is_action_pressed("player_down")
 	var left = Input.is_action_pressed("player_left")
 	var right = Input.is_action_pressed("player_right")
-	
 	if up or down:
-		
 		if !$RunSound.playing:
 			$RunSound.play()
 			$IdleSound.stop()
@@ -27,6 +28,7 @@ func _move():
 		
 		velocity = (vlc.normalized() * speed).rotated(rotation) 
 		move_and_slide()
+		_make_track()
 	else:
 		vlc.y = 0
 		$RunSound.stop()
@@ -61,6 +63,34 @@ func _make_bullet():
 	get_parent().add_child(kb)
 	bullets.append(kb)
 
+func _make_track():
+	
+	if prev_track_position == Vector2.ZERO:
+		prev_track_position = position
+		
+		var track = Sprite2D.new()
+		track.texture = load("res://asserts/sprites/tracksSmall.png") as Texture2D
+		track.rotate(rotation)
+		track.position = position + Vector2(0, -1).rotated(rotation)
+		
+		var track_timer = Timer.new()
+		add_child(track_timer)
+		track_timer.connect("timeout", _on_track_life_timeout)
+		track_timer.one_shot = true
+		track_timer.wait_time = 10
+		track_timer.start()
+		
+		tracks.push_back(track)
+
+		get_parent().add_child(track)
+	else:
+		var nnd = position - prev_track_position
+		var diff = abs(nnd.x) + abs(nnd.y)
+		
+		if diff >= 50:
+			prev_track_position = Vector2.ZERO
+	
+
 func _shot():
 	var shot = Input.is_action_just_pressed("player_shot")
 	
@@ -80,7 +110,8 @@ func _process(delta):
 	_move()
 	_shot()
 	
-
+func _ready():
+	z_index = 10
 
 func _on_shot_timeout():
 	$Shot.visible = false
@@ -88,3 +119,8 @@ func _on_shot_timeout():
 func _on_bullet_outofscreen(kb):
 	bullets.erase(kb)
 	kb.queue_free()
+	
+func _on_track_life_timeout():
+	if len(tracks) > 0:
+		var track = tracks.pop_front()
+		track.queue_free()
