@@ -57,6 +57,10 @@ func _make_bullet():
 		
 	kb.position = position + Vector2(0, 130).rotated(rotation)
 	kb.velocity = (kb.position - position) * bullet_speed
+	
+	var shape = RectangleShape2D.new()
+	shape.size = bs.get_rect().size
+	cs.shape = shape
 		
 	cs.add_child(bs)
 	kb.add_child(cs)
@@ -109,9 +113,6 @@ func _shot():
 func _process(delta):
 	_move()
 	_shot()
-	
-func _ready():
-	z_index = 10
 
 func _on_shot_timeout():
 	$Shot.visible = false
