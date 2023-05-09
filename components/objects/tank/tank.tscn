@@ -12,6 +12,7 @@
 size = Vector2(108, 125)
 
 [node name="Tank" type="CharacterBody2D"]
+z_index = 1
 position = Vector2(311, 133)
 script = ExtResource("1_q2qfv")
 metadata/_edit_group_ = true

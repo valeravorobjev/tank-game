@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bui25t43814f4"]
+
+[ext_resource type="Script" path="res://components/objects/tank/tank_base.gd" id="1_fdxgu"]
+[ext_resource type="AudioStream" uid="uid://djdrd0j23v4dt" path="res://asserts/audio/run_sound.mp3" id="2_8qti5"]
+[ext_resource type="Texture2D" uid="uid://cf2pxsm4qy4ba" path="res://asserts/sprites/tank_red.png" id="2_kv3tv"]
+[ext_resource type="AudioStream" uid="uid://cko3cvfcjcr4i" path="res://asserts/audio/idle_sound.mp3" id="3_v1pfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ixh"]
+size = Vector2(80, 93)
+
+[node name="tank_base" type="CharacterBody2D"]
+z_index = 3
+position = Vector2(114, 101)
+script = ExtResource("1_fdxgu")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_20ixh")
+
+[node name="Skin" type="Sprite2D" parent="."]
+texture = ExtResource("2_kv3tv")
+
+[node name="RunSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8qti5")
+
+[node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v1pfg")

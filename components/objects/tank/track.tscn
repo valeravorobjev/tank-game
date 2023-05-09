@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://be112b73afbh7"]
+
+[ext_resource type="Texture2D" uid="uid://dhtjq3qwrwoxk" path="res://asserts/sprites/tracksSmall.png" id="1_cdqy5"]
+[ext_resource type="Script" path="res://components/objects/tank/track.gd" id="1_kl3oc"]
+
+[node name="track" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_cdqy5")
+script = ExtResource("1_kl3oc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_track_life_timeout"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4f3ecbi5ivk1"]
+
+[ext_resource type="Texture2D" uid="uid://ch5kycf2gvifw" path="res://asserts/sprites/explosionSmoke1.png" id="1_kqbjg"]
+[ext_resource type="Texture2D" uid="uid://bpnmn13fak0sl" path="res://asserts/sprites/explosion1.png" id="1_lwh3o"]
+[ext_resource type="Texture2D" uid="uid://dwdgwxgtepylo" path="res://asserts/sprites/explosion2.png" id="2_a7wpu"]
+[ext_resource type="Texture2D" uid="uid://dcdd3i7uha84v" path="res://asserts/sprites/explosionSmoke2.png" id="2_gtm34"]
+[ext_resource type="Texture2D" uid="uid://fewht5f4k43p" path="res://asserts/sprites/explosion3.png" id="3_gv5xm"]
+[ext_resource type="Texture2D" uid="uid://cx5d5clkn1j21" path="res://asserts/sprites/explosionSmoke3.png" id="3_uxkxm"]
+[ext_resource type="Texture2D" uid="uid://la4xojkpqfyv" path="res://asserts/sprites/explosion4.png" id="4_cvvms"]
+[ext_resource type="Texture2D" uid="uid://c8emjf62tfs87" path="res://asserts/sprites/explosionSmoke4.png" id="4_k07bb"]
+[ext_resource type="Texture2D" uid="uid://bsrkcxy82tp3r" path="res://asserts/sprites/explosion5.png" id="5_0swds"]
+[ext_resource type="Texture2D" uid="uid://cwfi381cc1x40" path="res://asserts/sprites/explosionSmoke5.png" id="5_3nitc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41v6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lwh3o")
+}, {
+"duration": 1.1,
+"texture": ExtResource("2_a7wpu")
+}, {
+"duration": 1.2,
+"texture": ExtResource("3_gv5xm")
+}, {
+"duration": 1.3,
+"texture": ExtResource("4_cvvms")
+}, {
+"duration": 1.4,
+"texture": ExtResource("5_0swds")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kqbjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gtm34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uxkxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k07bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3nitc")
+}],
+"loop": false,
+"name": &"smoke",
+"speed": 10.0
+}]
+
+[node name="Bang" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_41v6u")
+animation = &"fire"
