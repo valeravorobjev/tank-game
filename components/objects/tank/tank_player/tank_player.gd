@@ -1,12 +1,4 @@
-extends CharacterBody2D
-
-@export var speed = 200
-@export var rotation_speed = 0.025
-@export var speed_acceleration = 5
-
-var tank_h_position = Vector2.ZERO
-
-var track = TrackEngine.new()
+extends "res://components/objects/tank/tank_base/tank_base.gd"
 
 func _move():
 	var up = Input.is_action_pressed("player_up")
@@ -26,7 +18,7 @@ func _move():
 			tank_h_position.y -= speed_acceleration
 		
 		velocity = (tank_h_position.normalized() * speed).rotated(rotation)
-		track.tracking(get_parent(),position, rotation) 
+		track.tracking(get_parent(), position, rotation) 
 		move_and_slide()
 	else:
 		$RunSound.stop()
@@ -42,3 +34,4 @@ func _move():
 
 func _physics_process(delta):
 	_move()
+	$Fire.plyer_fire(self)

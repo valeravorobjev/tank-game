@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://byptjyspjdbom"]
+
+[ext_resource type="Texture2D" uid="uid://dx1intkg5cfp" path="res://asserts/sprites/shotThin.png" id="1_q68ls"]
+[ext_resource type="Script" path="res://components/objects/tank/elements/fire/fire.gd" id="2_07qey"]
+[ext_resource type="AudioStream" uid="uid://db3e4mb45mur4" path="res://asserts/audio/shot1.mp3" id="3_5tv7j"]
+
+[node name="Fire" type="Sprite2D"]
+texture = ExtResource("1_q68ls")
+script = ExtResource("2_07qey")
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -99)
+stream = ExtResource("3_5tv7j")
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_shot_timeout"]

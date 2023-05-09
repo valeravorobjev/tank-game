@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://fh6l1x3o6fov"]
+[gd_scene load_steps=4 format=3 uid="uid://bjb21wqbfnguu"]
 
 [ext_resource type="Script" path="res://components/levels/level1/level1.gd" id="1_4b17m"]
-[ext_resource type="PackedScene" uid="uid://c17h6gae2jjh" path="res://components/objects/tank/tank.tscn" id="3_f6u1v"]
+[ext_resource type="PackedScene" uid="uid://c1q7a8aok6ylg" path="res://components/objects/tank/tank_player/tank_player.tscn" id="3_f6u1v"]
 [ext_resource type="PackedScene" uid="uid://cvx6tfpabmm4o" path="res://components/levels/level1/map.tscn" id="4_xc0c3"]
 
 [node name="level1" type="Node2D"]
@@ -9,7 +9,6 @@ position = Vector2(0, 1)
 script = ExtResource("1_4b17m")
 
 [node name="Tank" parent="." instance=ExtResource("3_f6u1v")]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(72, 412)
 rotation = -1.55885
