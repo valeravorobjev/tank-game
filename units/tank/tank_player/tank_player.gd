@@ -35,3 +35,14 @@ func _move():
 func _physics_process(delta):
 	_move()
 	$Fire.plyer_fire(self)
+	
+	var coll = get_last_slide_collision()
+	if coll != null:
+		var tm = coll.get_collider() as TileMap
+		var point = tm.to_local(coll.get_position())
+		
+		var cell = tm.get_cell_source_id(0,tm.to_local(point))
+		tm.tile
+		print()
+		
+		
