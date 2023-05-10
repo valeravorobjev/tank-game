@@ -9,6 +9,7 @@ position = Vector2(0, 1)
 script = ExtResource("1_4b17m")
 
 [node name="Tank" parent="." instance=ExtResource("3_f6u1v")]
+z_index = 2
 position = Vector2(72, 412)
 rotation = -1.55885
 
