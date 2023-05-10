@@ -24,7 +24,7 @@ func _move():
 		$RunSound.stop()
 		if !$IdleSound.playing:
 			$IdleSound.play()
-			pass
+		tank_h_position = Vector2.ZERO
 			
 
 	if left:

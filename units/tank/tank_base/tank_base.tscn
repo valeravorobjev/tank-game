@@ -11,6 +11,7 @@ size = Vector2(80, 93)
 
 [node name="TankBase" type="CharacterBody2D"]
 z_index = 3
+y_sort_enabled = true
 position = Vector2(114, 101)
 script = ExtResource("1_fdxgu")
 
