@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://byptjyspjdbom"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Texture2D" uid="uid://dx1intkg5cfp" path="res://asserts/sprites/shotThin.png" id="1_q68ls"]
-[ext_resource type="Script" path="res://components/objects/tank/elements/fire/fire.gd" id="2_07qey"]
+[ext_resource type="Script" path="res://units/tank/components/fire/fire.gd" id="2_07qey"]
 [ext_resource type="AudioStream" uid="uid://db3e4mb45mur4" path="res://asserts/audio/shot1.mp3" id="3_5tv7j"]
 
 [node name="Fire" type="Sprite2D"]

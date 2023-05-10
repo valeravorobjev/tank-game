@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3jxgkj86wi1c"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Texture2D" uid="uid://dhtjq3qwrwoxk" path="res://asserts/sprites/tracksSmall.png" id="1_cdqy5"]
-[ext_resource type="Script" path="res://components/objects/tank/elements/track/track.gd" id="1_kl3oc"]
+[ext_resource type="Script" path="res://units/tank/components/track/track.gd" id="1_kl3oc"]
 
 [node name="Track" type="Sprite2D"]
 z_index = 1

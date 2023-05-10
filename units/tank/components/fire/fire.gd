@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var bullet_src = preload("res://components/objects/tank/elements/bullet/bullet.tscn")
+var bullet_src = preload("res://units/tank/components/bullet/bullet.tscn")
 
 func _ready():
 	visible = false

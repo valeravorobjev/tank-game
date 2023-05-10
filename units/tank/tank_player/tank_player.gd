@@ -1,4 +1,4 @@
-extends "res://components/objects/tank/tank_base/tank_base.gd"
+extends "res://units/tank/tank_base/tank_base.gd"
 
 func _move():
 	var up = Input.is_action_pressed("player_up")
