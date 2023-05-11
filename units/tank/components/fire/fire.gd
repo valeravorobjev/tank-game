@@ -18,7 +18,8 @@ func _fire(parent:Node):
 	bullet.set("tank_rotation", parent.get("rotation"))
 	parent.get_parent().add_child(bullet)
 
-func plyer_fire(parent: Node):
+
+func player_fire(parent: Node):
 	var shot = Input.is_action_just_pressed("player_shot")
 	
 	if shot and $FireTimer.is_stopped():

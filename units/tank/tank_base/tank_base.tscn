@@ -11,12 +11,11 @@ size = Vector2(80, 93)
 
 [node name="TankBase" type="CharacterBody2D"]
 z_index = 3
-y_sort_enabled = true
 position = Vector2(114, 101)
 script = ExtResource("1_fdxgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_20ixh")
 
 [node name="Skin" type="Sprite2D" parent="."]

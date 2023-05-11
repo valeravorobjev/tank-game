@@ -13,5 +13,4 @@ z_index = 2
 position = Vector2(72, 412)
 rotation = -1.55885
 
-[node name="map" parent="." instance=ExtResource("4_xc0c3")]
-y_sort_enabled = true
+[node name="Map" parent="." instance=ExtResource("4_xc0c3")]
