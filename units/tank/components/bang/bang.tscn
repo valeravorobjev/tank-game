@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4f3ecbi5ivk1"]
+[gd_scene load_steps=13 format=3 uid="uid://b4f3ecbi5ivk1"]
 
 [ext_resource type="Texture2D" uid="uid://ch5kycf2gvifw" path="res://asserts/sprites/explosionSmoke1.png" id="1_kqbjg"]
 [ext_resource type="Texture2D" uid="uid://bpnmn13fak0sl" path="res://asserts/sprites/explosion1.png" id="1_lwh3o"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c8emjf62tfs87" path="res://asserts/sprites/explosionSmoke4.png" id="4_k07bb"]
 [ext_resource type="Texture2D" uid="uid://bsrkcxy82tp3r" path="res://asserts/sprites/explosion5.png" id="5_0swds"]
 [ext_resource type="Texture2D" uid="uid://cwfi381cc1x40" path="res://asserts/sprites/explosionSmoke5.png" id="5_3nitc"]
+[ext_resource type="AudioStream" uid="uid://dsdhnyfxo3fqi" path="res://asserts/audio/bang-smoke-sound.mp3" id="11_njej0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_41v6u"]
 animations = [{
@@ -57,3 +58,9 @@ animations = [{
 [node name="Bang" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_41v6u")
 animation = &"fire"
+
+[node name="SmokeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_njej0")
+volume_db = 10.0
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]

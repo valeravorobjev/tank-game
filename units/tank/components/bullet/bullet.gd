@@ -24,8 +24,14 @@ func bullet_collide():
 		var km_pos = km.get_position()
 
 		var tm = collider as TileMap
+		if tm == null:
+			var bang = bang_scene.instantiate() as AnimatedSprite2D
+			bang.connect("animation_finished",_end_band_animation)
+			add_child(bang)
+			bang.play("smoke")
+			return
 
-		var cell_position = tm.local_to_map(km_pos)
+		var cell_position = tm.local_to_map(km_pos) 
 
 		var tile_data = tm.get_cell_tile_data(1, cell_position)
 		if tile_data != null:
@@ -35,6 +41,8 @@ func bullet_collide():
 			var bang = bang_scene.instantiate() as AnimatedSprite2D
 			bang.connect("animation_finished",_end_band_animation)
 			add_child(bang)
+			var sound = bang.get_child(0) as AudioStreamPlayer2D
+			sound.play()
 			bang.play("smoke")
 
 func _end_band_animation():
